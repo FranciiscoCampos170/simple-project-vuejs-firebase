@@ -2,26 +2,40 @@
 
 <div>
   <h1>Create Page</h1>
-  <form action="" @submit.prevent="addEmployer">
-    <input type="text" placeholder="First Name" name="first_name" v-model="firstName">
-    <input type="text" placeholder="Last Name" name="last_name" v-model="lastName">
-    <input type="text" placeholder="E-mail" name="email" v-model="email">
+  <form @submit.prevent="addEmployer">
+    <input type="text" name="firstName" v-model="firstName">
+    <p>{{ firstName }}</p>
   </form>
 </div>
 </template>
 
 <script>
+import db from '@/firebase/init'
 export default {
-  name: 'firstName',
-  name: 'lastName',
-  name: 'email',
+  name: 'Create',
   props: ['name'],
   data(){
     return {
-      firstName: null,
-      lastName: null,
-      email: null
+      firstName: null
     }
+  },
+  methods: {
+      addEmployer(){
+        console.log(firstName);
+
+          /*if(this.firstName){
+            db.collection('employers').add({
+              content: this.firstName,
+              name: this.name,
+              timestamp: Date.now()
+            }).catch(err => {
+              console.log(err);
+            })
+            this.firstName = null
+          }else{
+
+          }*/
+      }
   }
 }
 </script>
