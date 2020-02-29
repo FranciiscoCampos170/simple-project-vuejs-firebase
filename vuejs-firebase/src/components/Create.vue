@@ -3,7 +3,7 @@
 <div>
   <h1>Create Page</h1>
   <form @submit.prevent="addEmployer">
-    <input type="text" name="firstName" v-model="firstName">
+    <input type="text" name="first-name" v-model="firstName">
     <p>{{ firstName }}</p>
   </form>
 </div>
@@ -21,11 +21,11 @@ export default {
   },
   methods: {
       addEmployer(){
-        console.log(firstName);
-          /*if(this.firstName){
+          //console.log(this.firstName);
+          if(this.firstName){
             db.collection('employers').add({
               content: this.firstName,
-              name: this.name,
+              //name: this.name,
               timestamp: Date.now()
             }).catch(err => {
               console.log(err);
@@ -33,7 +33,7 @@ export default {
             this.firstName = null
           }else{
 
-          }*/
+          }
       }
   }
 }
