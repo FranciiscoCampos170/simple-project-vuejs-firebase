@@ -22,7 +22,6 @@ export default {
   methods: {
       addEmployer(){
         console.log(firstName);
-
           /*if(this.firstName){
             db.collection('employers').add({
               content: this.firstName,
